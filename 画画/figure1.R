@@ -1,10 +1,11 @@
 attach(mtcars)
-opar<-par(no.readnonly=TRUE)
+opar<-par(no.readonly=TRUE)
 par(mfrow=c(2,2))
+par(mar=c(9,5,6,6))
 plot(wt,mpg,main="wt-mpg plot")
 hist(wt,main="wt hist");
 boxplot(wt,main="wt boxplot")
 a<-head(wt)
 b<-head(mpg)
-plot(a,b,type="b")
+plot(a,b,type="b",main="wt-mpg")
 detach(mtcars)

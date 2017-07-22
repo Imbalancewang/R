@@ -1,0 +1,8 @@
+attach(mtcars)
+opar<-par(no.readonly = TRUE)
+a<-head(wt)
+b<-head(mpg)
+par(lty=2,pch=17)
+plot(a,b,type="b",main="wt-mpg head plot")
+par(opar)
+detach(mtcars)
