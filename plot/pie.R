@@ -1,0 +1,15 @@
+#pie1
+opar<-par(no.readonly = TRUE)
+par(mfrow=c(2,2))
+slices<-c(10,12,4,16,8)
+lbls<-c("US","UK","AUS","GER","FRA")
+pie(slices,labels = lbls,main="simple pie chart")
+pct<-round(slices/sum(slices)*100)
+lbls2<-paste(lbls," ",pct,"%",sep="")
+pie(slices,labels = lbls2,col=rainbow(length(lbls2)),
+    main="pie chart")
+library(plotrix)
+pie3D(slices,labels = lbls,explode=0.1,main="3D pie chart")
+mytable<-table(state.region)
+lbls3<-paste(names(mytable),"\n",mytable,sep="")
+pie(mytable,label=lbls3,main="pie chart")
